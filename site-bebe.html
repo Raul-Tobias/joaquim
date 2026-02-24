@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Bebê</title>
+
+<style>
+:root{
+  --cor-primaria:#8ecae6;
+  --cor-secundaria:#fff;
+}
+
+/* TEMAS */
+.tema-menino{ --cor-primaria:#4dabf7; }
+.tema-menina{ --cor-primaria:#ff6b9d; }
+.tema-neutro{ --cor-primaria:#8ecae6; }
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:#f6f9fc;
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:var(--cor-primaria);
+  color:white;
+  padding:16px;
+  text-align:center;
+  position:sticky;
+  top:0;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+nav button{
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* SEÇÕES */
+section{
+  padding:24px 16px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+/* FOTO */
+.foto-bebe{
+  width:220px;
+  max-width:100%;
+  border-radius:16px;
+}
+
+/* GALERIA */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+}
+
+.foto-card{
+  width:100%;
+  aspect-ratio:1/1; /* todas quadradas */
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.foto-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* corta sem deformar */
+  display:block;
+}
+
+/* TIMELINE */
+.timeline-item{
+  border-left:4px solid var(--cor-primaria);
+  padding-left:12px;
+  margin:12px 0;
+}
+
+/* MURAL */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+.btn{
+  background:var(--cor-primaria);
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  width:100%;
+}
+
+.recado{
+  background:#f1f5f9;
+  padding:10px;
+  border-radius:10px;
+  margin-top:8px;
+}
+
+/* MOBILE EXTRA */
+@media (min-width:768px){
+  header h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body class="tema-menino">
+
+<header>
+  <h1>👶 Nosso Bebê</h1>
+
+  <nav>
+    <button onclick="mudarTema('menino')">💙 Menino</button>
+    
+  </nav>
+</header>
+
+<!-- CHEGUEI -->
+<section>
+  <div class="card" style="text-align:center">
+    <h2>🎉 Cheguei!</h2>
+    <img src="img/image.png" class="foto-bebe" alt="bebê">
+
+    <p><strong>Nome:</strong> Joaquim Vicente</p>
+    <p><strong>Nascimento:</strong> 02/02/2026</p>
+    <p><strong>Peso:</strong> 3,415 kg</p>
+
+    <p style="font-style:italic;font-size:1.2em">
+      "Um ser tão pequeno trouxe o maior amor do mundo."
+    </p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="card">
+    <h2>🕰️ Nossa História</h2>
+
+    <div class="timeline-item">
+      <strong>🤰 Descobrimos a gravidez</strong>
+      <p>O início do nosso milagre.</p>
+    </div>
+
+    <div class="timeline-item">
+      <strong>🎁 Chá de bebê</strong>
+      <p>Um dia cheio de amor.</p>
+    </div>
+
+    <div class="timeline-item">
+      <strong>👶 O grande dia</strong>
+      <p>Você chegou para iluminar tudo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section>
+  <div class="card">
+    <h2>📸 Primeiros Momentos</h2>
+
+    <div class="grid">
+        <div class="foto-card"><img src="img/IMG-20260217-WA0150.jpg"></div>
+        <div class="foto-card"><img src="img/IMG_20260216_101855.jpg"></div>
+        <div class="foto-card"><img src="img/IMG_20260216_102117.jpg"></div>
+        <div class="foto-card"><img src="img/IMG_20260218_155358.jpg"></div>
+        </div>
+  </div>
+</section>
+
+<!-- DIÁRIO -->
+<section>
+  <div class="card">
+    <h2>📖 Diário</h2>
+
+    <p><strong>1 mês:</strong> Cada suspiro seu é um milagre.</p>
+    <p><strong>1 ano:</strong> Meu pequeno tesouro de um ano de idade!</p>
+  </div>
+</section>
+
+<!-- LISTA 
+<section>
+  <div class="card">
+    <h2>🎁 Lista de Presentes</h2>
+
+    <p>🍼 Mamadeira</p>
+    <p>👶 Body RN</p>
+    <p>🛁 Kit banho</p>
+  </div>
+</section> -->
+
+<!-- MURAL -->
+<section>
+  <div class="card">
+    <h2>💌 Mural de Recados</h2>
+
+    <input id="nome" placeholder="Seu nome">
+    <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+    <button class="btn" onclick="salvarRecado()">Enviar recado</button>
+
+    <div id="listaRecados"></div>
+  </div>
+</section>
+
+<script>
+/* ===== TEMAS ===== */
+function mudarTema(tipo){
+  document.body.className = "tema-" + tipo;
+}
+
+/* ===== BANCO LOCAL ===== */
+function salvarRecado(){
+  const nome = document.getElementById('nome').value.trim();
+  const msg = document.getElementById('mensagem').value.trim();
+  if(!nome || !msg) return;
+
+  const recados = JSON.parse(localStorage.getItem('recadosBebe') || '[]');
+
+  recados.unshift({nome, msg, data:new Date().toLocaleString()});
+  localStorage.setItem('recadosBebe', JSON.stringify(recados));
+
+  document.getElementById('nome').value='';
+  document.getElementById('mensagem').value='';
+
+  renderRecados();
+}
+
+function renderRecados(){
+  const lista = document.getElementById('listaRecados');
+  const recados = JSON.parse(localStorage.getItem('recadosBebe') || '[]');
+
+  lista.innerHTML='';
+
+  recados.forEach(r=>{
+    const div=document.createElement('div');
+    div.className='recado';
+    div.innerHTML=`<strong>${r.nome}</strong>
+                   <small style="display:block;color:#666">${r.data}</small>
+                   <p>${r.msg}</p>`;
+    lista.appendChild(div);
+  });
+}
+
+renderRecados();
+</script>
+
+</body>
+</html>

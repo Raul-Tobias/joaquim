@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Mural do Bebê</title>
+<style>
+body{font-family:Arial;background:#fff0f5;padding:20px;}
+.container{max-width:700px;margin:auto;}
+textarea,input,button{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+}
+.recado{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>💌 Deixe seu recado</h1>
+
+  <input id="nome" placeholder="Seu nome">
+  <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+  <button onclick="adicionar()">Enviar</button>
+
+  <div id="lista"></div>
+</div>
+
+<script>
+function adicionar(){
+  const nome = document.getElementById('nome').value;
+  const msg = document.getElementById('mensagem').value;
+
+  if(!nome || !msg) return;
+
+  const div = document.createElement('div');
+  div.className = 'recado';
+  div.innerHTML = "<strong>"+nome+"</strong><p>"+msg+"</p>";
+
+  document.getElementById('lista').prepend(div);
+}
+</script>
+
+</body>
+</html>
